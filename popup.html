@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Quick Notes <span id="count"></span></h1>
+    <div class="header-actions">
+      <button id="export-btn" type="button" title="Exportar notas" aria-label="Exportar notas">⬇️</button>
+      <button id="clear-all" type="button" title="Borrar todo" aria-label="Borrar todas las notas">🗑️</button>
+    </div>
+  </div>
+  <div class="input-area">
+    <textarea id="note-input" placeholder="Escribe una nota... (Ctrl+Enter para guardar)"></textarea>
+    <div class="save-row">
+      <select id="category-select" aria-label="Categoría de la nota">
+        <option value="general">📌 General</option>
+        <option value="trabajo">💼 Trabajo</option>
+        <option value="estudio">📚 Estudio</option>
+        <option value="urgente">⚡ Urgente</option>
+      </select>
+      <button id="save-btn" type="button">Guardar</button>
+    </div>
+  </div>
+  <div class="filters" id="category-filters" role="group" aria-label="Filtrar por categoría">
+    <button type="button" class="filter-btn filter-btn--active" data-filter="all">Todas</button>
+    <button type="button" class="filter-btn" data-filter="general" title="General">📌</button>
+    <button type="button" class="filter-btn" data-filter="trabajo" title="Trabajo">💼</button>
+    <button type="button" class="filter-btn" data-filter="estudio" title="Estudio">📚</button>
+    <button type="button" class="filter-btn" data-filter="urgente" title="Urgente">⚡</button>
+  </div>
+  <p class="category-stats" id="category-stats" aria-live="polite"></p>
+  <div id="notes-list"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
